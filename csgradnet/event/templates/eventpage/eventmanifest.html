@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Events</title>
+  {% load staticfiles %}
+     
+      
+      <link href="{% static 'eventpage/bootstrap-combined.no-icons.min.css' %}" rel="stylesheet">
+      <link href="{% static 'eventpage/font-awesome.css' %}" rel="stylesheet">
+      
+      <link href="{% static 'eventpage/bootstrap.min.css' %}" rel="stylesheet">
+     
+      <link href="{% static 'eventpage/Pretty-Footer.css' %}" rel="stylesheet">
+      
+</head>
+<body>
+<nav style="margin-bottom: 30px;" class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header"><a class="navbar-brand navbar-link" href="http://127.0.0.1:8000/"> <strong>GradNet</strong></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Events</a></li>
+                    <li><a href="#">Scholarships</a></li>
+                    <li> <a href="http://127.0.0.1:8000/admin"><button class="btn btn-danger btn_login btn-register"type="button" name="button">Login</button></a> </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+          {% for event in all_events %}
+  <div class="row">
+    <div class="span12">
+      <div class="well well-small clearfix">
+        <div class="row-fluid">
+          <div class="span2">
+             <img src="" class="img-polaroid"/>
+          </div>
+          <div class="span4">
+             <h2>{{event.Name}}</h2>
+            <ul class="unstyled">
+              <li><i class="icon-globe"></i> <b>{{event.eventVenue}}</b> </li>
+              <li><i class="icon-phone"></i> {{event.eventVenue}} organizerphone</li>
+              <li><i class="icon-envelope"></i> {{event.eventVenue}} organizeremail</li>
+              <li><i class="icon-globe"></i> <a href="http://suza.ac.tz">Organizer website</a></li>
+            </ul>
+          </div>
+          <div class="span6">
+          <ul class="inline stats">
+               <li> <b><span>  {{event.eventDate}}</span> </b> Event Date </li>
+               <!--<li> <span>50</span> Seats </li> -->
+               <li> <span>{{event.eventFee}}</span> Fees </li>
+          </ul>
+
+            <div><!--/span6-->
+            {{event.Description}}
+            </div><!--/row-->
+      </div>
+      
+
+      <!-- makes a large button that spans across the card <button class="btn btn-lg btn-primary btn-block" type="submit">Register</button> -->
+      <!--Body content-->
+    </div>
+  </div>
+  </div>
+</div>
+<hr>
+{% endfor %}
+
+    <footer class="site-footer">
+
+        <footer>
+            <div class="row">
+                <div class="col-md-4 col-sm-6 footer-navigation">
+                    <h3><a href="#"><span>SUZA</span></a></h3>
+                    <p class="links"><a href="#">suza.ac.tz</a><strong> · </strong><a href="#">Blog</a><strong> · </strong> · </strong><a href="#">About</a><strong> · </strong> · </strong><a href="#">Contact</a></p>
+                    <p
+                    class="company-name">BCS Group 1 © 2019 </p>
+                </div>
+                <div class="col-md-4 col-sm-6 footer-contacts">
+                    <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                        <p><span class="new-line-span">Tunguu</span> Zanzibar</p>
+                    </div>
+                    <div><i class="fa fa-phone footer-contacts-icon"></i>
+                        <p class="footer-center-info email text-left"> +255 672 621315</p>
+                    </div>
+                    <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                        <p> <a href="#" target="_blank">bcsgroup@gmail.com</a></p>
+                    </div>
+                </div>
+                <div class="clearfix visible-sm-block"></div>
+                <div class="col-md-4 footer-about">
+                    <h4>About the project</h4>
+                    <p> This is the software project development for BCS Class 2019 
+                    </p>
+                    <div class="social-links social-icons"><a href="#"></a><a href="#"></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
+                </div>
+            </div>
+        </footer>
+    </footer>
+
+</body>
+</html>
+
+
+
+<!--  Header
+<div class="container-fluid">
+
+    <header>
+        <nav class="navbar container-fluid">
+            <div class="container-fluid">
+                  <div class="navbar-header">
+                      <span class="navbar-brand"><a href="">FISPY</a></span>
+                  </div>
+
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#">Graduator</a></li>
+                    <li><a href="#">Event</a></li>
+                    <li><a href="#">Sign in	</a></li>
+                  </ul>
+            </div>
+        </nav>
+    </header>
+  </div>
+
+<a href="http://127.0.0.1:8000/admin/events/event/add/">Add event</a>
+
+-->
+
+

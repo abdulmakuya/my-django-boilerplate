@@ -1,0 +1,7 @@
+pages interconnected
+3 user roles
+presented to Dr.Yahya
+****************************
+retrieving related attributes of a model
+	Education Background
+	Internship Experience

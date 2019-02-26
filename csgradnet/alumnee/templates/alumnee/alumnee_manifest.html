@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+		<html>
+				<head>
+            			<link rel="stylesheet" type="text/css" href="{% static 'alumnee/styles/bootstrap.min.css' %}">
+					  	<link rel="stylesheet" type="text/css" href="{% static 'alumnee/index.css' %}">
+						<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+				</head>
+
+				<body>
+
+						<header>
+								<nav class="navbar">
+								<div class="navbar-header">
+									<span class="navbar-brand"><a href="">GradNet</a></span>
+								</div>
+
+									<ul class="nav navbar-nav navbar-right">
+										<li><a href="#">Graduator</a></li>
+										<li><a href="#">Event</a></li>						
+										<li><a href="#">Sign in	</a></li>						
+									</ul>																	
+									</nav>
+							</header>
+						
+
+
+
+            <div class="container">
+                <div class="row">
+									{% for alumnee in all_alumnees %}
+                    <div class="col-xs-12 col-sm-6 col-md-4">
+                        <div class="well well-sm">
+                            <div class="row">
+
+                                <div class="col-sm-6 col-md-4">
+                                    <img src="{{alumnee.image.url}}" alt="" class="img-rounded img-responsive" />
+                                </div>
+                                <div class="col-sm-6 col-md-8">
+                                    <a href="{{alumnee.id}}"><h3>{{alumnee.FullName}}</h3></a>
+                                    <h4>{{alumnee.adress}}</h4>
+                                    <p>
+                                        <i>{{alumnee.email}}<br /></i>
+                                        {{alumnee.phone}}<br />
+                                        {{alumnee.graduationYear}}</p>
+                                    <!-- Details button
+																	-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+										{% endfor %}
+                </div>
+            </div>
+
+<!--   footer
+									-->
+
+
+</body>
+</html>

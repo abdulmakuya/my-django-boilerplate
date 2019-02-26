@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Alumnee</title>
+
+
+    <link rel="stylesheet" href="{% static './alumnee_details/bootstrap.min.css' %}">
+    <link rel="stylesheet" href=" {% static './alumnee_details/font-awesome.min.css' %}">
+    <link rel="stylesheet" href=" {% static './alumnee_details/profile.css' %}">
+    
+   
+  </head>
+  <body>
+
+
+        <!-- nav bar -->
+
+        <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <a href="mail-compose.html" class="btn btn-success btn-block btn-compose-email">Portfolio Projects</a>
+                
+            </div>
+            <div class="col-sm-9">
+
+                <!-- resumt -->
+                <div class="panel panel-default">
+                       <div class="panel-heading resume-heading">
+                          <div class="row">
+                             <div class="col-lg-12">
+                                <div class="col-xs-12 col-sm-4">
+                                   <figure>
+                                      <img class="img-circle img-responsive" alt="" src="{{alumnee_object.image.url}}">
+                                   </figure>
+                                   
+                                </div>
+                                <div class="col-xs-12 col-sm-8">
+                                   <ul class="list-group">
+                                      <li class="list-group-item">{{alumnee_object.FullName}}</li>
+                                      <li class="list-group-item">{{alumnee_object.HighestEducation}} </li>
+                                      <li class="list-group-item">{{alumnee_object.graduationYear}}</li>
+                                      <li class="list-group-item"><i class="fa fa-phone"></i> {{alumnee_object.phone}} </li>
+                                      <li class="list-group-item"><i class="fa fa-envelope"></i> {{ alumnee_object.email }}</li>
+                                   </ul>
+                                </div>
+                             </div>
+                          </div>
+                       </div>
+                       <div class="bs-callout bs-callout-danger">
+                          <h4>Summary</h4>
+                          <p>
+                            {{alumnee_object.PersonalDescription}}
+                          </p>
+                          
+                       </div>
+                     
+
+                       <div class="bs-callout bs-callout-danger">
+                          <h4>Internship/Volunteer Experiencess</h4>
+                          {% if alumnee_object.internship_set.all %}
+                              
+                              
+                                  {% for internship in alumnee_object.internship_set.all %}
+                                    <ul class="list-group">
+                                     <a class="list-group-item inactive-link" href="#">
+                                        <h4 class="list-group-item-heading"> {{internship.position}} at {{internship.institution}} </h4>
+                                        <!--<h4 class="list-group-item-heading"> Roles and Responsibilities </h4>-->
+                                        
+                                        <p class="list-group-item-text">
+                                           {{internship.roles}}
+                                        </p>
+                                     </a>
+                                     </ul>
+                                    {% endfor %}
+                                {% else %}
+                                    <h4>The alumnee doesnt have any portfolio</h4>
+                          {% endif %}
+                              
+                          
+                                                    
+                       </div>
+
+
+                       <div class="bs-callout bs-callout-danger">
+                          <h4>Education</h4>
+                          <table class="table table-striped table-responsive ">
+                             <thead>
+                                <tr>
+                                   <th>Institution</th>
+                                   <th>Level</th>
+                                   <th>Graduation Year</th>
+                                   <th>CGPA</th>
+                                </tr>
+                             </thead>
+                             <tbody>
+                                {% if alumnee_object.education_set.all %}
+                                    {% for education in alumnee_object.education_set.all %}
+                                        <tr>
+                                           <td>{{education.institution}}</td>
+                                           <td>{{education.level}}</td>
+                                           <td>{{education.year}}</td>
+                                           <td> {{education.grade}} </td>
+                                        </tr>
+                                    {% endfor %}
+                                {% else %}
+                                    <h4>The alumnee doesnt have any portfolio</h4>
+                                {% endif %}
+                             </tbody>
+                          </table>
+                       </div>
+                    </div>
+                 </div>
+                <!-- resume -->
+
+            </div>
+        </div>
+        </div>
+
+
+  </body>
+</html>
