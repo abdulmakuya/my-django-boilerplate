@@ -7,3 +7,6 @@ retrieving related attributes of a model
 	Internship Experience
 ****************************
 App version
+django version 2.2.1
+username abdulmakuya
+pw 123..
