@@ -25,7 +25,8 @@ Documentation
 - easy_install django
 - django-admin --version
 - pipenv install
+### Create a virtual environment within a project
 - pipenv shell
-- pipenv install Django==2.2.8
+- 
 
 
