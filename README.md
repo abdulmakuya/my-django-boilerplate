@@ -18,3 +18,14 @@ ADVANCED FEATURES
 - Data visualization and Analyzation with python
 
 Why Python and Django
+- Python connects with a larger field of scientific computing
+
+
+Documentation
+- easy_install django
+- django-admin --version
+- pipenv install
+- pipenv shell
+- pipenv install Django==2.2.8
+
+
