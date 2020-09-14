@@ -42,7 +42,7 @@ Documentation
 ### Admin/Customization
 - admin.site.unregister()
 - admin.site.site_header = 'New Header'
-''' python
+``` python
 Class SnippetAdmin(admin.ModelAdmin):
     #specify fields to hide
     exclude = ('title')
@@ -53,7 +53,7 @@ Class SnippetAdmin(admin.ModelAdmin):
     #
     list_filter = ('created')
 
-    '''
+    ```
 
 
 ### Flow
