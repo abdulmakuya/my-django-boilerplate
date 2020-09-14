@@ -25,8 +25,35 @@ Documentation
 - easy_install django
 - django-admin --version
 - pipenv install
+
+- pipenv lock --clear
+- pipenv clear
+
 ### Create a virtual environment within a project
 - pipenv shell
-- 
+- pipenv install Django===2.2.1
+
+- Change your models (in models.py).
+- python manage.py makemigrations [appname] - to create migrations for those changes
+- python manage.py migrate - migrate to apply those changes to the database.
+- python manage.py createsuperuser
 
 
+### Admin/Customization
+- admin.site.unregister()
+- admin.site.site_header = 'New Header'
+
+Class SnippetAdmin(admin.ModelAdmin):
+    #specify fields to hide
+    exclude = ('title')
+    #specify fields to show
+    fields = ('title', 'created')
+    #
+    list_display = ('title','created')
+    #
+    list_filter = ('created')
+
+
+### Flow
+- Create models
+- Register models in Admin
