@@ -28,6 +28,7 @@ Documentation
 
 - pipenv lock --clear
 - pipenv clear
+- /Users/user/anaconda/lib/python3.6/site-packages - Package installation path
 
 ### Create a virtual environment within a project
 - pipenv shell
